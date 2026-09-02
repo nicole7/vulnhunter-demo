@@ -1,0 +1,17 @@
+# Claude local settings
+.claude/
+
+# Python
+__pycache__/
+*.py[cod]
+*.pyo
+.venv/
+venv/
+*.egg-info/
+
+# Runtime files created when the app runs
+target-app/portal.db
+target-app/uploads/
+
+# macOS
+.DS_Store
