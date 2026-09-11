@@ -15,3 +15,4 @@ target-app/uploads/
 
 # macOS
 .DS_Store
+VulnHunter_VULNHUNT_RESULTS_*/
