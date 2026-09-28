@@ -50,10 +50,10 @@ def login():
         hashed = _hash_password(password)
 
         db = _get_db()
-        # VULN: SQL injection — username is interpolated directly into the query.
-        # An attacker can supply  ' OR '1'='1  to bypass authentication entirely.
-        query = f"SELECT * FROM users WHERE username = '{username}' AND password = '{hashed}'"
-        user = db.execute(query).fetchone()
+        user = db.execute(
+            "SELECT * FROM users WHERE username = ? AND password = ?",
+            (username, hashed),
+        ).fetchone()
 
         if user:
             session["user_id"] = user["id"]
